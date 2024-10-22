@@ -6,6 +6,7 @@ import ErrorPage from "./pages/Error";
 import HomePage from "./pages/Home";
 import { loader as weatherLoader } from "./pages/Root";
 import Spinner from "./components/Spinner";
+import EventChecker from "./components/EventChecker"; // Import EventChecker
 
 // * Lazy loading
 const DailyWeatherDetailPage = lazy(() => import("./pages/DailyWeatherDetail"));
@@ -19,7 +20,15 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     loader: weatherLoader,
     children: [
-      { index: true, element: <HomePage /> },
+      { 
+        index: true, 
+        element: (
+          <>
+            <HomePage />
+            <EventChecker /> {/* Add EventChecker component here */}
+          </>
+        ),
+      },
       {
         path: "daily-weather/:dailyWeatherDetail",
         element: (

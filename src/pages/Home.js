@@ -1,6 +1,7 @@
 import { useOutletContext } from "react-router-dom";
 import Weather from "../components/Weather";
 import getDate from "../utils/getDate";
+import EventChecker from "../components/EventChecker";
 
 const HomePage = () => {
   const { units, hourly, current_weather } = useOutletContext();
@@ -29,13 +30,23 @@ const HomePage = () => {
     temperatures: slicedTemperatures,
   };
 
+  // Add your Calendly URL and token here
+  const calendlyURL = "https://calendly.com/kirubarp-22it-kongu"; // Replace with your Calendly URL
+  const accessToken = "your-calendly-access-token"; // Personal Access Token
+
   return (
-    <Weather
-      weather={current_weather}
-      units={units}
-      date={date}
-      hourlyWeathers={hourlyWeathers}
-    />
+    <div>
+      {/* Existing weather functionality */}
+      <Weather
+        weather={current_weather}
+        units={units}
+        date={date}
+        hourlyWeathers={hourlyWeathers}
+      />
+
+      {/* New event checker to display alerts based on Calendly events and weather */}
+      <EventChecker calendlyURL={calendlyURL} accessToken={accessToken} />
+    </div>
   );
 };
 
