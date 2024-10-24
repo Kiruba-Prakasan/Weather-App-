@@ -67,7 +67,3 @@ Start the server
 - Country information provided by RESTCountries API.
 
 Thank you for using the React-Weather app! Feel free to explore the source code, contribute, and enhance your weather experience using this intuitive React application.
-
-## 🔗 Links
-
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hsyntes)
